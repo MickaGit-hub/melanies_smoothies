@@ -40,7 +40,7 @@ if ingredients_list:
 
         st.subheader(fruit_chosen + ' Nutrition Information')
         fruit=search_on
-        if fruit is None:
+        if fruit == "":
             fruit = fruit_chosen
         smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit)
         sf_df = st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
